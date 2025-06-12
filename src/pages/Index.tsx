@@ -10,8 +10,12 @@ import Dashboard from '@/components/Dashboard';
 import MeetingSummary from '@/components/MeetingSummary';
 import MeetingNotes from '@/components/MeetingNotes';
 import MeetingDetails from '@/components/MeetingDetails';
+import Pricing from './Pricing';
+import Guide from './Guide';
+import About from './About';
+import Profile from './Profile';
 
-type ViewType = 'landing' | 'dashboard' | 'summary' | 'notes' | 'details';
+type ViewType = 'landing' | 'dashboard' | 'summary' | 'notes' | 'details' | 'pricing' | 'guide' | 'about' | 'profile';
 
 const Index = () => {
   const { isAuthenticated } = useAuth();
@@ -23,6 +27,30 @@ const Index = () => {
   const handleShowAuth = (type: 'login' | 'signup') => {
     setAuthType(type);
     setShowAuthModal(true);
+  };
+
+  const handleNavigation = (page: string) => {
+    switch (page) {
+      case 'home':
+        setCurrentView(isAuthenticated ? 'dashboard' : 'landing');
+        break;
+      case 'about':
+        setCurrentView('about');
+        break;
+      case 'guide':
+        setCurrentView('guide');
+        break;
+      case 'pricing':
+        setCurrentView('pricing');
+        break;
+      case 'profile':
+        if (isAuthenticated) {
+          setCurrentView('profile');
+        }
+        break;
+      default:
+        setCurrentView('landing');
+    }
   };
 
   const handleViewSummary = (meetingId: string) => {
@@ -47,12 +75,29 @@ const Index = () => {
 
   // If user is authenticated, show dashboard by default
   React.useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated && currentView === 'landing') {
       setCurrentView('dashboard');
-    } else {
+    } else if (!isAuthenticated && (currentView === 'dashboard' || currentView === 'profile')) {
       setCurrentView('landing');
     }
   }, [isAuthenticated]);
+
+  // Handle specific page views
+  if (currentView === 'pricing') {
+    return <Pricing onShowAuth={handleShowAuth} />;
+  }
+
+  if (currentView === 'guide') {
+    return <Guide onShowAuth={handleShowAuth} />;
+  }
+
+  if (currentView === 'about') {
+    return <About onShowAuth={handleShowAuth} />;
+  }
+
+  if (currentView === 'profile' && isAuthenticated) {
+    return <Profile onBack={handleBackToDashboard} />;
+  }
 
   if (currentView === 'dashboard' && isAuthenticated) {
     return (
@@ -94,7 +139,7 @@ const Index = () => {
   // Landing page
   return (
     <div className="min-h-screen bg-noted-gradient">
-      <Navbar onShowAuth={handleShowAuth} />
+      <Navbar onShowAuth={handleShowAuth} onNavigate={handleNavigation} />
       <Hero onShowAuth={handleShowAuth} />
       <Features />
       <Footer />
