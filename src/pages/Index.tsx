@@ -34,6 +34,13 @@ const Index = () => {
       case 'home':
         setCurrentView(isAuthenticated ? 'dashboard' : 'landing');
         break;
+      case 'dashboard':
+        if (isAuthenticated) {
+          setCurrentView('dashboard');
+        } else {
+          setCurrentView('landing');
+        }
+        break;
       case 'about':
         setCurrentView('about');
         break;

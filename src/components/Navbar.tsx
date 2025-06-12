@@ -17,14 +17,22 @@ const Navbar: React.FC<NavbarProps> = ({ onShowAuth, onNavigate }) => {
     }
   };
 
+  const handleLogoClick = () => {
+    if (isAuthenticated) {
+      handleNavigation('dashboard');
+    } else {
+      handleNavigation('home');
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-effect">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div 
-            className="text-2xl font-bold text-white text-body cursor-pointer"
-            onClick={() => handleNavigation('home')}
+            className="text-2xl font-bold text-white text-body cursor-pointer hover:text-white/90 transition-colors"
+            onClick={handleLogoClick}
           >
             Noted.ai
           </div>
