@@ -17,13 +17,11 @@ const Profile: React.FC<ProfilePageProps> = ({ onBack }) => {
         <ProfileHeader onBack={onBack} />
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Profile Information */}
           <div className="lg:col-span-2">
             <ProfileInfo />
             <UserPreferences />
           </div>
 
-          {/* Statistics and Actions */}
           <div>
             <UsageStats />
             <AccountActions />
