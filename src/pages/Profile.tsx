@@ -4,8 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
 import { useAuth } from '@/contexts/AuthContext';
-import { User, Mail, Calendar, Settings, ArrowLeft } from 'lucide-react';
+import { User, Mail, Calendar, Settings, ArrowLeft, Moon, Sun } from 'lucide-react';
 
 interface ProfilePageProps {
   onBack: () => void;
@@ -14,6 +15,7 @@ interface ProfilePageProps {
 const Profile: React.FC<ProfilePageProps> = ({ onBack }) => {
   const { user, logout } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const [profileData, setProfileData] = useState({
     name: user?.name || '',
     email: user?.email || '',
@@ -37,6 +39,19 @@ const Profile: React.FC<ProfilePageProps> = ({ onBack }) => {
       timezone: 'UTC-8 (Pacific Time)'
     });
     setIsEditing(false);
+  };
+
+  const handleDarkModeToggle = (checked: boolean) => {
+    setDarkMode(checked);
+    // In a real app, this would save the preference to backend
+    console.log('Dark mode toggled:', checked);
+    
+    // Apply dark mode class to document
+    if (checked) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   };
 
   const stats = [
@@ -172,6 +187,38 @@ const Profile: React.FC<ProfilePageProps> = ({ onBack }) => {
                     </Button>
                   </div>
                 )}
+              </CardContent>
+            </Card>
+
+            {/* Preferences Section */}
+            <Card className="card-gradient">
+              <CardHeader>
+                <CardTitle className="text-body text-2xl font-bold text-white flex items-center">
+                  <Settings className="h-6 w-6 mr-2 text-noted-purple" />
+                  Preferences
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    {darkMode ? (
+                      <Moon className="h-5 w-5 text-noted-purple" />
+                    ) : (
+                      <Sun className="h-5 w-5 text-noted-purple" />
+                    )}
+                    <div>
+                      <Label className="text-body text-white text-lg">Dark Mode</Label>
+                      <p className="text-body text-white/70 text-sm">
+                        Switch between light and dark themes
+                      </p>
+                    </div>
+                  </div>
+                  <Switch
+                    checked={darkMode}
+                    onCheckedChange={handleDarkModeToggle}
+                    className="data-[state=checked]:bg-noted-purple"
+                  />
+                </div>
               </CardContent>
             </Card>
           </div>
