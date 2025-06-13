@@ -59,16 +59,16 @@ const Pricing: React.FC<PricingPageProps> = ({ onShowAuth }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-noted-gradient">
+    <div className="min-h-screen bg-white">
       <Navbar onShowAuth={onShowAuth} />
       
       <div className="pt-24 pb-16 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h1 className="text-body text-5xl font-bold text-white mb-6">
+            <h1 className="text-body text-5xl font-bold text-gray-900 mb-6">
               Choose Your Plan
             </h1>
-            <p className="text-body text-xl text-white/80 max-w-2xl mx-auto">
+            <p className="text-body text-xl text-gray-700 max-w-2xl mx-auto">
               Select the perfect plan for your meeting needs. Start with our free plan and upgrade as you grow.
             </p>
           </div>
@@ -85,18 +85,18 @@ const Pricing: React.FC<PricingPageProps> = ({ onShowAuth }) => {
                 )}
                 
                 <CardHeader className="text-center">
-                  <CardTitle className="text-body text-2xl font-bold text-white">
+                  <CardTitle className="text-body text-2xl font-bold text-gray-900">
                     {plan.name}
                   </CardTitle>
                   <div className="mt-4">
-                    <span className="text-cta text-4xl font-bold text-white">
+                    <span className="text-cta text-4xl font-bold text-gray-900">
                       {plan.price}
                     </span>
                     {plan.period && (
-                      <span className="text-body text-white/60">{plan.period}</span>
+                      <span className="text-body text-gray-600">{plan.period}</span>
                     )}
                   </div>
-                  <CardDescription className="text-body text-white/70 mt-2">
+                  <CardDescription className="text-body text-gray-600 mt-2">
                     {plan.description}
                   </CardDescription>
                 </CardHeader>
@@ -104,7 +104,7 @@ const Pricing: React.FC<PricingPageProps> = ({ onShowAuth }) => {
                 <CardContent>
                   <ul className="space-y-3">
                     {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-body text-white/90">
+                      <li key={featureIndex} className="flex items-center text-body text-gray-700">
                         <Check className="h-5 w-5 text-noted-purple mr-3 flex-shrink-0" />
                         {feature}
                       </li>
@@ -117,7 +117,7 @@ const Pricing: React.FC<PricingPageProps> = ({ onShowAuth }) => {
                     className={`w-full text-body ${
                       plan.popular 
                         ? 'bg-noted-purple hover:bg-noted-purple/90' 
-                        : 'bg-white/10 hover:bg-white/20 border border-white/30'
+                        : 'bg-gray-900 hover:bg-gray-800'
                     } text-white`}
                     onClick={() => onShowAuth('signup')}
                   >

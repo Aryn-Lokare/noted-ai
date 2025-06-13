@@ -56,7 +56,7 @@ export default {
         'noted-purple': '#7C3AED',
       },
       backgroundImage: {
-        'noted-gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        'noted-gradient': 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
       },
       borderRadius: {
         lg: "var(--radius)",

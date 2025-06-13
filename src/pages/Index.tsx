@@ -145,7 +145,7 @@ const Index = () => {
 
   // Landing page
   return (
-    <div className="min-h-screen bg-noted-gradient">
+    <div className="min-h-screen bg-white">
       <Navbar onShowAuth={handleShowAuth} onNavigate={handleNavigation} />
       <Hero onShowAuth={handleShowAuth} />
       <Features />

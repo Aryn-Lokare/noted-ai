@@ -14,7 +14,7 @@ const UsageStats: React.FC = () => {
   return (
     <Card className="card-gradient mb-8">
       <CardHeader>
-        <CardTitle className="text-body text-xl font-bold text-white flex items-center">
+        <CardTitle className="text-body text-xl font-bold text-gray-900 flex items-center">
           <Calendar className="h-5 w-5 mr-2 text-noted-purple" />
           Usage Statistics
         </CardTitle>
@@ -23,7 +23,7 @@ const UsageStats: React.FC = () => {
         <div className="space-y-4">
           {stats.map((stat, index) => (
             <div key={index} className="flex justify-between items-center">
-              <span className="text-body text-white/80">{stat.label}</span>
+              <span className="text-body text-gray-600">{stat.label}</span>
               <span className="text-cta text-xl font-bold text-noted-purple">{stat.value}</span>
             </div>
           ))}

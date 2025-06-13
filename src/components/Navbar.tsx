@@ -31,7 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({ onShowAuth, onNavigate }) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div 
-            className="text-2xl font-bold text-white text-body cursor-pointer hover:text-white/90 transition-colors"
+            className="text-2xl font-bold text-gray-900 text-body cursor-pointer hover:text-noted-purple transition-colors"
             onClick={handleLogoClick}
           >
             Noted.ai
@@ -41,26 +41,26 @@ const Navbar: React.FC<NavbarProps> = ({ onShowAuth, onNavigate }) => {
           <div className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => handleNavigation('about')}
-              className="text-nav text-white/90 hover:text-white transition-colors"
+              className="text-nav text-gray-700 hover:text-noted-purple transition-colors"
             >
               About Us
             </button>
             <button 
               onClick={() => handleNavigation('guide')}
-              className="text-nav text-white/90 hover:text-white transition-colors"
+              className="text-nav text-gray-700 hover:text-noted-purple transition-colors"
             >
               Guide
             </button>
             <button 
               onClick={() => handleNavigation('pricing')}
-              className="text-nav text-white/90 hover:text-white transition-colors"
+              className="text-nav text-gray-700 hover:text-noted-purple transition-colors"
             >
               Pricing
             </button>
             {isAuthenticated && (
               <button 
                 onClick={() => handleNavigation('profile')}
-                className="text-nav text-white/90 hover:text-white transition-colors"
+                className="text-nav text-gray-700 hover:text-noted-purple transition-colors"
               >
                 Profile
               </button>
@@ -71,11 +71,11 @@ const Navbar: React.FC<NavbarProps> = ({ onShowAuth, onNavigate }) => {
           <div className="flex items-center space-x-4">
             {isAuthenticated ? (
               <div className="flex items-center space-x-4">
-                <span className="text-body text-white/90">Welcome, {user?.name}</span>
+                <span className="text-body text-gray-700">Welcome, {user?.name}</span>
                 <Button
                   onClick={logout}
                   variant="outline"
-                  className="text-body bg-transparent border-white/30 text-white hover:bg-white/10"
+                  className="text-body bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100"
                 >
                   Logout
                 </Button>
@@ -85,7 +85,7 @@ const Navbar: React.FC<NavbarProps> = ({ onShowAuth, onNavigate }) => {
                 <Button
                   onClick={() => onShowAuth('login')}
                   variant="outline"
-                  className="text-body bg-transparent border-white/30 text-white hover:bg-white/10"
+                  className="text-body bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100"
                 >
                   Login
                 </Button>

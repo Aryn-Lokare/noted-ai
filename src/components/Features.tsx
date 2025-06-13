@@ -31,13 +31,13 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-20 px-6">
+    <section id="features" className="py-20 px-6 bg-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-cta text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-cta text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Powerful Features
           </h2>
-          <p className="text-body text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-body text-xl text-gray-700 max-w-2xl mx-auto">
             Everything you need to transform your meeting experience with AI-powered automation
           </p>
         </div>
@@ -46,17 +46,17 @@ const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="card-gradient rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+              className="card-gradient rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
             >
               <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-6`}>
                 <feature.icon className="w-8 h-8 text-white" />
               </div>
               
-              <h3 className="text-cta text-xl font-semibold text-white mb-3">
+              <h3 className="text-cta text-xl font-semibold text-gray-900 mb-3">
                 {feature.title}
               </h3>
               
-              <p className="text-body text-white/70 leading-relaxed">
+              <p className="text-body text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -65,7 +65,7 @@ const Features = () => {
 
         <div className="mt-16 text-center">
           <div className="card-gradient rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-cta text-2xl font-bold text-white mb-4">
+            <h3 className="text-cta text-2xl font-bold text-gray-900 mb-4">
               Integration Capabilities
             </h3>
             <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -73,19 +73,19 @@ const Features = () => {
                 <div className="w-12 h-12 bg-green-500 rounded-lg mx-auto mb-3 flex items-center justify-center">
                   <span className="text-white font-bold">G</span>
                 </div>
-                <p className="text-body text-white/80">Google Calendar & Meet</p>
+                <p className="text-body text-gray-700">Google Calendar & Meet</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-blue-500 rounded-lg mx-auto mb-3 flex items-center justify-center">
                   <span className="text-white font-bold">Z</span>
                 </div>
-                <p className="text-body text-white/80">Zoom Meetings</p>
+                <p className="text-body text-gray-700">Zoom Meetings</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 bg-purple-500 rounded-lg mx-auto mb-3 flex items-center justify-center">
                   <span className="text-white font-bold">T</span>
                 </div>
-                <p className="text-body text-white/80">Microsoft Teams</p>
+                <p className="text-body text-gray-700">Microsoft Teams</p>
               </div>
             </div>
           </div>

@@ -24,7 +24,7 @@ const UserPreferences: React.FC = () => {
   return (
     <Card className="card-gradient">
       <CardHeader>
-        <CardTitle className="text-body text-2xl font-bold text-white flex items-center">
+        <CardTitle className="text-body text-2xl font-bold text-gray-900 flex items-center">
           <Settings className="h-6 w-6 mr-2 text-noted-purple" />
           Preferences
         </CardTitle>
@@ -38,8 +38,8 @@ const UserPreferences: React.FC = () => {
               <Sun className="h-5 w-5 text-noted-purple" />
             )}
             <div>
-              <Label className="text-body text-white text-lg">Dark Mode</Label>
-              <p className="text-body text-white/70 text-sm">
+              <Label className="text-body text-gray-900 text-lg">Dark Mode</Label>
+              <p className="text-body text-gray-600 text-sm">
                 Switch between light and dark themes
               </p>
             </div>

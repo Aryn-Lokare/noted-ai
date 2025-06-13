@@ -17,16 +17,16 @@ const Hero: React.FC<HeroProps> = ({ onShowAuth }) => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 px-6">
+    <section className="min-h-screen flex items-center justify-center pt-20 px-6 bg-noted-gradient">
       <div className="text-center max-w-4xl mx-auto animate-fade-in">
-        <h1 className="text-cta text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+        <h1 className="text-cta text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
           Your AI Meeting
-          <span className="bg-gradient-to-r from-noted-purple to-noted-indigo bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-noted-purple to-purple-600 bg-clip-text text-transparent">
             {" "}Assistant
           </span>
         </h1>
         
-        <p className="text-body text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-body text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
           Automatically join meetings, capture every word, and generate intelligent summaries. 
           Make your post-meeting experience completely stress-free.
         </p>
@@ -43,23 +43,23 @@ const Hero: React.FC<HeroProps> = ({ onShowAuth }) => {
           <Button
             variant="outline"
             size="lg"
-            className="text-body bg-transparent border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg rounded-full"
+            className="text-body bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100 px-8 py-4 text-lg rounded-full"
           >
             Watch Demo
           </Button>
         </div>
 
-        <div className="mt-12 flex justify-center items-center space-x-8 text-white/60">
+        <div className="mt-12 flex justify-center items-center space-x-8 text-gray-600">
           <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
             <span className="text-body">Google Meet</span>
           </div>
           <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
             <span className="text-body">Zoom</span>
           </div>
           <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+            <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
             <span className="text-body">Microsoft Teams</span>
           </div>
         </div>

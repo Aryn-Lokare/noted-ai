@@ -52,16 +52,16 @@ const Guide: React.FC<GuidePageProps> = ({ onShowAuth }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-noted-gradient">
+    <div className="min-h-screen bg-white">
       <Navbar onShowAuth={onShowAuth} />
       
       <div className="pt-24 pb-16 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h1 className="text-body text-5xl font-bold text-white mb-6">
+            <h1 className="text-body text-5xl font-bold text-gray-900 mb-6">
               How to Use Noted.ai
             </h1>
-            <p className="text-body text-xl text-white/80 max-w-2xl mx-auto">
+            <p className="text-body text-xl text-gray-700 max-w-2xl mx-auto">
               Follow this simple guide to get the most out of your AI meeting assistant
             </p>
           </div>
@@ -78,12 +78,12 @@ const Guide: React.FC<GuidePageProps> = ({ onShowAuth }) => {
                       {index + 1}
                     </span>
                   </div>
-                  <CardTitle className="text-body text-xl font-bold text-white">
+                  <CardTitle className="text-body text-xl font-bold text-gray-900">
                     {step.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-body text-white/80">
+                  <p className="text-body text-gray-600">
                     {step.description}
                   </p>
                 </CardContent>
@@ -93,14 +93,14 @@ const Guide: React.FC<GuidePageProps> = ({ onShowAuth }) => {
 
           <Card className="card-gradient">
             <CardHeader>
-              <CardTitle className="text-body text-2xl font-bold text-white text-center">
+              <CardTitle className="text-body text-2xl font-bold text-gray-900 text-center">
                 Pro Tips for Better Results
               </CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4">
                 {tips.map((tip, index) => (
-                  <li key={index} className="flex items-start text-body text-white/90">
+                  <li key={index} className="flex items-start text-body text-gray-700">
                     <span className="text-noted-purple font-bold mr-3">•</span>
                     {tip}
                   </li>
